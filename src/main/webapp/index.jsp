@@ -42,26 +42,23 @@
             data.forEach(function (item, i) {
 // if occupation = false = free else occupied
                 let valueArray = Object.values(item);
-
                 if (valueArray[1] === true) {
-                    console.log(valueArray[1])
-                    console.log(valueArray[0])
+                    // console.log("valueArray[0] :" + valueArray[0]);
+                    // let v = valueArray[0];
+                    // console.log(typeof (v) + "V= :" + v);
+                    let bubu = document.getElementsByTagName('input');
+                    // console.log(" Длина массива" + bubu.length);
+                    // bubu[v].setAttribute('disabled', 'disabled')
+                    for (let i = 0; i < bubu.length; i++) {
+                        if (bubu[i].value == valueArray[0]) {
+                            bubu[i].setAttribute('disabled', 'disabled');
+                        }
+                    }
                     $(`#${valueArray[0]}`).text(` Место ${valueArray[0]} OCCUPIED`).css("background-color", "#ff0000")
-                                $(`#${valueArray[0]}`).attr('disabled', 'disabled')
-                                                $(`#${valueArray[0]}`).attr('disabled', true)
-
-                    $('input[name="radio"]').prop("disabled", "true");
-                  $('input[name="radio"][value="30"]').prop("disabled", true);
-                    $('input[name="radio"][value="30"]').attr('disabled', true)
-           //         $(`#${valueArray[0]}`).prop('disabled', true);
-                    $(`#${valueArray[0]}`).attr('disabled', true)
                     $(`#${valueArray[0]}`).parent().css("background-color", "#000000")
                 } else {
-                    console.log(valueArray[1])
-                    console.log(valueArray[0])
                     $(`#${valueArray[0]}`).text(` Место ${valueArray[0]} FREE`).css("background-color", "#7FFF00")
                 }
-                //            console.log($(`#${valueArray[0]}`).text() + "BBBB")
             })
         }).fail(function (err) {
             alert("Fail 55 " + err)
@@ -151,7 +148,3 @@
 </div>
 </body>
 </html>
-
-
-
-
