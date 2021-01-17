@@ -37,6 +37,7 @@
             dataType: 'json',
         }).done(function (data) {
             console.log(data)
+
             let arr = Array.from(data);
             console.log(" Array 42 Массив распарсили из data" + data)
             data.forEach(function (item, i) {
